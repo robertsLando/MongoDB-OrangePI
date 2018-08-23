@@ -98,6 +98,10 @@ sudo rm -rf /mytempswapfile
 
 You will find your compiled binaries on `build/opt/mongo`. Now you can copy your binaries in the `usr/bin` and create the mongodb conf and service file by following [Install](#install) section
 
+### Snapshot
+
+![Mongo Shell](/snapshots/mongodb_orangepi.png)
+
 ### Sources
 
 Thanks to:
