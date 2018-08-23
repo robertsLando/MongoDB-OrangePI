@@ -5,7 +5,7 @@ Mongodb 3.2.12 for orange PI precompiled binaries for 32 bit armv7l.
 **WARNING**
 Mongodb size limit on 32bit systems is 2GB.
 
-### Installation
+### Install
 
 Create mongodb user and folders needed
 
@@ -33,7 +33,6 @@ sudo cp mongodb.service /lib/systemd/system
 cd bin
 sudo chown root:root mongo*
 sudo chmod 755 mongo*
-sudo strip mongo*
 sudo cp -p mongo* /usr/bin
 
 sudo systemctl start mongodb
@@ -57,8 +56,6 @@ sudo service mongodb restart
 ```
 
 # Build mongo from source
-
-Thanks to: http://koenaerts.ca/compile-and-install-mongodb-on-raspberry-pi/
 
 ```bash
 
@@ -92,6 +89,18 @@ scons mongo mongod -j4 --disable-warnings-as-errors --wiredtiger=off --mmapv1=on
 #Strip binaries files to reduce space usage
 cd build/opt/mongo
 sudo strip mongo*
+
+##Reboot system and remove swap file
+
+sudo reboot
+sudo rm -rf /mytempswapfile
 ```
 
-You will find your compiled binaries on `build/opt/mongo`. Now you can follow Install section to make binaries work
+You will find your compiled binaries on `build/opt/mongo`. Now you can copy your binaries in the `usr/bin` and create the mongodb conf and service file by following [Install](#install) section
+
+### Sources
+
+Thanks to:
+
+- Mongo binaries configuration and service: https://andyfelong.com/2016/01/mongodb-3-0-9-binaries-for-raspberry-pi-2-jessie/
+- Mongo binaries compile: http://koenaerts.ca/compile-and-install-mongodb-on-raspberry-pi/
