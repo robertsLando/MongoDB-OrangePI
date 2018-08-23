@@ -1,11 +1,11 @@
-# MongoDB-OrangePI
+# MongoDb for OrangePI
 
-Mongodb 3.2.12 for orange PI precompiled binaries for 32 bit armv7l.
+MongoDb 3.2.12 for Orange Pi precompiled binaries for 32 bit armv7l.
 
 **WARNING**
-Mongodb size limit on 32bit systems is 2GB.
+> This 32-bit legacy distribution does not include SSL encryption and is limited to around 2GB of data. In general you should use the 64 bit builds.
 
-### Install
+## Install
 
 Create mongodb user and folders needed
 
@@ -55,7 +55,7 @@ sudo -u mongodb mongod --repair --dbpath /var/lib/mongodb/
 sudo service mongodb restart
 ```
 
-# Build mongo from source
+## Build mongo from source
 
 ```bash
 
